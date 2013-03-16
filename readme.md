@@ -2,6 +2,9 @@
 
 [Userscript](http://wiki.greasespot.net/User_script) to format and syntax highlight CSS files you open
 
+![screenshot](screenshot.png)
+
+
 ### Before
 
 ```css
