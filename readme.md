@@ -4,6 +4,8 @@
 
 ![screenshot](screenshot.png)
 
+A [bookmarklet](https://github.com/addyosmani/cssprettifier-bookmarklet) for this project by Addy Osmani is also available.
+
 
 ### Before
 
