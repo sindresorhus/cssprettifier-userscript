@@ -48,8 +48,10 @@ Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=
 	/*global cssbeautify */
 	'use strict';
 
-	// Chrome doesn't support the @require tag so everything is embedded
+	// Only prettify if the document only contains a single <pre>. This is how Chrome shows CSS
+	// Avoids prettification of normal html-pages with url's ending with '.css'
 	if (document.body.childNodes.length === 1 && document.body.childNodes[0].tagName === 'PRE') {
+		// Chrome doesn't support the @require tag so everything is embedded
 		var prismStyle = document.createElement('style');
 		var beautified = cssbeautify(document.body.textContent, {autosemicolon: true});
 		var highlighted = Prism.highlight(beautified, Prism.languages.css);
