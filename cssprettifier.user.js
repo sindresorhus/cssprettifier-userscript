@@ -49,14 +49,15 @@ Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=
 	'use strict';
 
 	// Chrome doesn't support the @require tag so everything is embedded
-
-	var prismStyle = document.createElement('style');
-	var beautified = cssbeautify(document.body.textContent, {autosemicolon: true});
-	var highlighted = Prism.highlight(beautified, Prism.languages.css);
-
-	prismStyle.textContent = 'code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,\'Andale Mono\',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}@media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none;}}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto;}:not(pre) > code[class*="language-"],pre[class*="language-"]{background:#f5f2f0;}:not(pre) > code[class*="language-"]{padding:.1em;border-radius:.3em;}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray;}.token.punctuation{color:#999;}.namespace{opacity:.7;}.token.property,.token.tag,.token.boolean,.token.number{color:#905;}.token.selector,.token.attr-name,.token.string{color:#690;}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5);}.token.atrule,.token.attr-value,.token.keyword{color:#07a;}.token.regex,.token.important{color:#e90;}.token.important{font-weight:bold;}.token.entity{cursor:help;}';
-
-	document.head.innerHTML = '';
-	document.head.appendChild(prismStyle);
-	document.body.innerHTML = '<code><pre>' + highlighted + '</pre></code>';
+	if (document.body.childNodes.length === 1 && document.body.childNodes[0].tagName === 'PRE') {
+		var prismStyle = document.createElement('style');
+		var beautified = cssbeautify(document.body.textContent, {autosemicolon: true});
+		var highlighted = Prism.highlight(beautified, Prism.languages.css);
+	
+		prismStyle.textContent = 'code[class*="language-"],pre[class*="language-"]{color:black;text-shadow:0 1px white;font-family:Consolas,Monaco,\'Andale Mono\',monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}@media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none;}}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto;}:not(pre) > code[class*="language-"],pre[class*="language-"]{background:#f5f2f0;}:not(pre) > code[class*="language-"]{padding:.1em;border-radius:.3em;}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray;}.token.punctuation{color:#999;}.namespace{opacity:.7;}.token.property,.token.tag,.token.boolean,.token.number{color:#905;}.token.selector,.token.attr-name,.token.string{color:#690;}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#a67f59;background:hsla(0,0%,100%,.5);}.token.atrule,.token.attr-value,.token.keyword{color:#07a;}.token.regex,.token.important{color:#e90;}.token.important{font-weight:bold;}.token.entity{cursor:help;}';
+	
+		document.head.innerHTML = '';
+		document.head.appendChild(prismStyle);
+		document.body.innerHTML = '<code><pre>' + highlighted + '</pre></code>';
+	}
 })();
