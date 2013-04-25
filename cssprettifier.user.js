@@ -7,7 +7,7 @@
 // @license         MIT
 // @released        2013-03-14
 // @updated         2013-03-14
-// @match           *://*/*.css
+// @match           *://*/*.css*
 // @run-at          document-idle
 // ==/UserScript==
 /*
