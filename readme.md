@@ -1,51 +1,51 @@
-# [cssprettifier userscript](http://userscripts.org/scripts/show/162004)
+# cssprettifier-userscript
 
-[Userscript](http://wiki.greasespot.net/User_script) to format and syntax highlight CSS files you open
+Format and syntax highlight CSS files you open.
+
+> A [userscript](http://wiki.greasespot.net/User_script) is like a cross-browser extension that makes on-the-fly changes to specific web pages, typically to change their appearance or to add or modify functionality.
+
+
+## Getting started
+
+### [Install](http://userscripts.org/scripts/show/162004)
+
+Available on Chrome, Firefox *(requires [GreaseMonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/))*, Safari *(requires [NinjaKit](http://os0x.hatenablog.com/entry/20100612/1276330696))*, Opera.
+
+
+## Overview
 
 ![screenshot](screenshot.png)
-
-A [bookmarklet](https://github.com/addyosmani/cssprettifier-bookmarklet) for this project by Addy Osmani is also available.
-
 
 ### Before
 
 ```css
-.callout{margin:15px 0;padding:10px;font-size:13px;color:#8d8d6d;background:#fffef1;border:1px solid #e5e2c8;border-radius:4px;}.callout strong{font-weight:bold;color:#000;}.callout h2{margin:0;font-size:16px;font-weight:300;}.callout p:last-child{margin-bottom:0;}
+.callout{margin:15px 0;padding:10px;font-size:13px;color:#8d8d6d;background:#fffef1;border:1px solid #e5e2c8;border-radius:4px;}.callout strong{font-weight:bold;color:#000;}
 ```
 
 ### After
 
 ```css
 .callout {
-    margin: 15px 0;
-    padding: 10px;
-    font-size: 13px;
-    color: #8d8d6d;
-    background: #fffef1;
-    border: 1px solid #e5e2c8;
-    border-radius: 4px;
+	margin: 15px 0;
+	padding: 10px;
+	font-size: 13px;
+	color: #8d8d6d;
+	background: #fffef1;
+	border: 1px solid #e5e2c8;
+	border-radius: 4px;
 }
 
 .callout strong {
-    font-weight: bold;
-    color: #000;
-}
-
-.callout h2 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.callout p:last-child {
-    margin-bottom: 0;
+	font-weight: bold;
+	color: #000;
 }
 ```
+
+A [bookmarklet](https://github.com/addyosmani/cssprettifier-bookmarklet) is also available.
 
 Powered by [cssbeautify](https://github.com/senchalabs/cssbeautify) and [Prism](http://prismjs.com).
 
 
 # License
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
-(c) [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
