@@ -48,4 +48,4 @@ Powered by [cssbeautify](https://github.com/senchalabs/cssbeautify) and [Prism](
 
 # License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
